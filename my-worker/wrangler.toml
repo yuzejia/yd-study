@@ -1,0 +1,18 @@
+name = "my-typescript-worker"
+type = "javascript"
+zone_id = "2306c0049d11271bd0fa29126a5b0ebd"
+account_id = "4ca7b7e6076c11eb09db25b9084c9599"
+route = ""
+workers_dev = true
+compatibility_date = "2022-04-03"
+kv_namespaces = [{ binding = "MY_KV", preview_id = "17287e6ebd794f8e976be2d68c175558", id = "96be541202f44145bc91fc855230fcf1" }]
+
+[triggers]
+crons = ["*/2 * * * *"]
+
+[build]
+command = "npm install && npm run build:esbuild esbuild.js"
+[build.upload]
+format = "service-worker"
+
+
